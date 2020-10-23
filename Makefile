@@ -1,5 +1,5 @@
 IMAGE := clojure:lein
-DOCKER := docker run --rm -it -v $(PWD):/src -w /src
+DOCKER := docker run --rm -v $(PWD):/src -w /src
 RUN := $(DOCKER) $(IMAGE)
 
 .PHONY: build
@@ -16,4 +16,4 @@ fmt:
 
 .PHONY: shell
 shell:
-	$(RUN) bash
+	$(DOCKER) -it $(IMAGE) bash

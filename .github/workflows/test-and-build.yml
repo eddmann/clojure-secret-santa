@@ -1,0 +1,20 @@
+name: TestAndBuild
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: make test
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: make build
+      - uses: actions/upload-artifact@v2
+        with:
+          name: secret-santa.jar
+          path: target/uberjar/secret-santa-1.0.0-standalone.jar
