@@ -1,6 +1,6 @@
-# secret-santa
+# Clojure Secret Santa
 
-Allocates and emails secret santas (using Gmail).
+Allocates and emails secret santa's (using Gmail).
 
 ## Usage
 
